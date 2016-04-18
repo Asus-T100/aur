@@ -1,0 +1,48 @@
+pkgbase = linux-T100
+	pkgver = 4.3rc3.r25.ge3be426
+	pkgrel = 1
+	url = http://www.kernel.org/
+	arch = i686
+	arch = x86_64
+	license = GPL2
+	makedepends = xmlto
+	makedepends = docbook-xsl
+	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
+	makedepends = git
+	options = !strip
+	source = git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+	source = config
+	source = config.x86_64
+	source = linux-T100.preset
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = linux-T100
+	pkgdesc = The Linux kernel and modules (git version)
+	install = linux.install
+	depends = coreutils
+	depends = linux-firmware
+	depends = kmod
+	depends = mkinitcpio>=0.7
+	optdepends = crda: to set the correct wireless channels of your country
+	provides = kernel26-git=4.3rc3.r25.ge3be426
+	conflicts = kernel26-git
+	replaces = kernel26-git
+	backup = etc/mkinitcpio.d/linux-T100.preset
+
+pkgname = linux-T100-headers
+	pkgdesc = Header files and scripts for building modules for Linux kernel (git version)
+	provides = kernel26-git-headers=4.3rc3.r25.ge3be426
+	conflicts = kernel26-git-headers
+	replaces = kernel26-git-headers
+
+pkgname = linux-T100-docs
+	pkgdesc = Kernel hackers manual - HTML documentation that comes with the Linux kernel (git version)
+	provides = kernel26-git-docs=4.3rc3.r25.ge3be426
+	conflicts = kernel26-git-docs
+	replaces = kernel26-git-docs
+
